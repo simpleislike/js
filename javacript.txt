@@ -1,0 +1,312 @@
+Đối tượng window là đối tượng to nhất trong js
+Chứa toàn bộ code
+Đại diện cho tab trình duyệt:
+
+Bên trong đối tượng window:
+    Console
+    Document => html
+
+Biến:
+    Là một vùng bộ nhớ để lưu trữ dữ liệu
+    Biến thì có tên
+    Cách khai báo biến:
+        +Var [tên biến]
+        +let [tên biến]
+
+Các kiểu dữ liệu
+    +Number: số
+    +String: chuỗi = text
+    +Boolean: true/false
+    +Array: mảng
+        là một biến => lưu được nhiều giá trị
+        +index: chỉ số là thứ tụ
+        => bắt đầu từ 0
+        +mỗi thành phần con gọi là phần tử, các phần tử viết cách nhau bằng dấu phẩy
+    +Object
+    +Null: là biến đã được khai báo nhưng chưa chứa giá trị
+    +undefined: là kiêu dữ liệu chưa định nghĩa
+
+Function
+    hàm là một đoạn code được viết riếng ra
+    một hàm sẽ thực hiện 1 nhiệm vụ nào đấy
+
+    khai báo hàm: 
+        function [tên hàm] () {
+        }
+        +Khai báo hàm giống như khai báo Biến
+            var [tên hàm] = function()
+        *hàm không tên: 
+            +function (){
+
+            }
+            +(() => {
+
+            })()
+        +Arrow function
+            () => {
+
+            }
+            +truyền vào dấu ngoặc tròn
+            +nếu chỉ có 1 tham số, không cần dấu ngoặc tròn
+            +hàm không tên thường được dùng để truyền vào hàm khác
+        
+        +hàm sẽ chạy khi gọi hàm đó
+        +hàm thì có thể gọi nhiều lần
+        +tham số của hàm
+            +tham số: dữ liệu truyền vào
+            +Giá trị mặc định
+        
+        +return: đầu ra của hàm
+            return chỉ trả về 1 lần
+            các câu lệnh phía sau return thì không được thực thi
+            arrow function:
+                nếu như hàm return luôn 
+                    => ko cần dấu ngoặc nhọn
+
+Hằng: giống như biến, là 1 vùng bộ nhớ và cũng có tên
+      hằng không thể thay đổi giá trị
+      
+        +const [tên hàm số]  = value;
+
+Các thao tác xử lý biến:
+
+-Number:
+    +cong tru nhan chia
+    +chia lấy dư (%)
+    +Math
+
+-String:
+    +lấy chiều dài của một chuỗi: .length
+    +tách chuỗi: .split('kí tự chia')
+        \n newline
+    +chèn 1 biến vào biến khác
+        +var hello = `xin chao  ${fullName}`;
+        + (+)
+    +cát chuỗi
+        +subString(start, end)
+        +vd:
+
+        var fullName = 'Nguyen Luong Duy';
+        var ten = fullName.substring(0, 6);
+        
+    +subStr(start, length)
+    +IndexOf() => trả về thứ tự của 1 chuỗi con
+            +trả về -1 nếu không có phần tử đó trong chuỗi
+            +chỉ trả về vị trí đầu tiên
+
+    +lastIndexOf() tương tự indexOf() nhưng là phần tử cuối cùng
+    +includes('') kiểm tra xem chuỗi con có nằm trong chuỗi cha hay không
+            => trả về true/false
+
+-Boolean:
+
+-Array:
+    +length: trả về số lượng phần tử của mảng
+    +indexOf() => tương tự chuỗi
+    +lastIndexOf() => tương tự chuỗi
+    +includes() => tương tự chuỗi
+
+    +forEach() => lặp qua từng phần tử
+               => mỗi lần lặp chạy hàm 1 lần
+               => forEach không có return
+   
+    +map()     => sao chép và biến đổi thành 1 mảng khác
+               => số lượng phần tử mảng mới = số lượng phần tử của mảng cũ
+               => 1 phần tử của mảng mới = return của hàm
+
+    +filter(fn())
+               => nếu fn return true => lấy
+               => nếu fn return false => ko lấy
+
+    +reduce( fn(reducer, item), initial value)
+             => chạy hàm liên tiếp và nối đuôi nhau 
+    
+    +push('phần tử') => thêm vào cuối mảng
+    +unshift('phần tử')       => thêm vào đầu mảng
+
+    +pop()   => xóa phần tử cuối mảng
+    +shift() => xóa phần tử đầu mảng
+
+    +join('') => nối mảng lại bằng 1 kí tự gì đó
+
+    +some (fn)  => có ít nhất 1 giá trị đúng thì trả về: true
+    +every (fn) => tất cả giá trị đều đúng vs điều kiện thì trả về: true 
+
+    +slice(begin) => cắt mảng nhưng không ảnh hưởng đến mảng gốc
+     slide(begin, end)   
+
+    +splice(begin, length) => cắt mảng và ảnh hưởng tới mảng ban đầu       
+
+    +reverse() => đảo ngược mảng
+    
+    +shuffle()
+
+    Trong javascript
+    ===================
+    Assign by value => nếu biến là số, boolean, string
+    Assign by reference => nếu biến là array, object
+    ===================   
+
+    Prototype: nguyên mẫu
+        +là thuộc tính con => chứa toàn bộ các hàm của cái nguyên mẫu
+
+
+=================================================
+Lập trình hướng đối tượng:
+Object:
+    +Là một kiểu dữ liệu mô tả thực thể trong thực tế 
+    +vật, con vật
+    +điện thoại, con gà, ....
+    +chứa nhiều thuộc tính bên trong (property) (tính từ)
+        +truy cập thuộc tính: => sử dụng dấu chấm
+    +Method: hàm => giống function => động từ
+        +hoạt động của đối tượng
+        +(mảng cũng là object)
+        +hàm sử dụng dấu chấm
+    +constructor:
+            là một hàm đặc biệt: chạy khi object được tạo ra
+
+    các cách lấy thuốc tính:
+    var person = {
+        name: 'duy,
+        age: 32,
+        height: 160
+    }
+    var {name, age} = person;
+    console.log(name, age)
+
+Class và đối tượng
+    => là định nghĩa của đối tượng
+    => this => chính là object hiện thoại
+
+    extends: là kế thừa thuốc tính của class cha
+
+    super(): gọi lên construct của class cha
+
+Vòng lặp: 
+
++For (biến khởi đầu, điều kiện, gía trị tiếp theo) {
+    
+}
+    +continue => bỏ qua lệnh phía dưới
+    +break => thoát vòng lặp
+
++While(điều kiện) {
+
+}
++Do {
+
+}
+while(dieu kien)
+
+
+Error reporting:
++try
++catch
+=> ko kiểm soát được trong đoạn code xảy ra vấn đề gì
+=> có thể chủ động => ném ra 1 exception
+
+JS DOM:
+
+Document object Model
+=> cách thể hiện của html trong js
+=> mỗi thẻ html => tương đương vs 1 object trong js
+
+Lấy các thể html vào Biến
+
+
+=> Lấy ra được 1 cái
+    +getElementById('')
+    +querySelector('css selector')
+   
+
+ 
+=> Lấy ra nhiều cái (html collection)
+    +getElementsbyTagName('tên tag')
+    +getElementsByClassName('tên class')
+    +querySelectorAll('css selector')
+
+async => cài async sẽ làm cho thằng đó bị load cuối cùng
+
+Tạo ra các thẻ Html:
+
+    +createElement('tên thẻ')
+    +innerHTML = '<p>toi la duy</p>';
+
++Append: thêm vào vị trí cuối cùng của thành phần cha
++Prepend: thêm vào đầu 
++RemoveChild(element)
++replace(element mới, element cũ)
+
++thay đổi thuộc tính trong style
+    +style
+
+Đặt thuộc tính cho element:
+
+    +.setAttribute()
+
+Lấy ra thuộc tính:
+    +.getAttribute()
+
+Html collection:
+    + bộ tập hợp nhiều thẻ html (mảng)
+
+
++Quản lý classlist
+    +classList
+    +classList.add('')
+    +classList.remove('')
+    +classList.toggle('');
+    +classList.replace(new, old);
+    +classList.contains('');
+
+Event:
+Hành động => tương tác lên 1 element
+    +click: bấm vào => thả chuột ra => trong element đó
+    +mousedown: bấm chuột xuống
+    +mouseup: thả chuột ra
+    +mouseover: di chuột vào
+    +mouseout: di chuột ra bên ngoài
+    +onTouchStart: => giống như mousedown => trên mobile
+    +keydown: gõ phím
+    +keyup: thả phím ra
+    +keypress: bấm phím xuống => thả phím ra
+    +focus:
+    +mousemove: di chuyển chuột bên trong
+
+Các sự kiện riêng:
+    +document:
+        +DomContenLoaded => khi tải xong hết chữ thì sẽ fire event này
+    +image:
+        +load => ảnh đã tải xong
+        +error => ảnh bị lỗi
+
+Cho nhiều element
+
+context của this:
+    function: this => object hiện thoại
+    arrow function: this => là thằng cha
+
+    input: text, password
+        +change
+        +keyup
+        +keydown
+    video:
+        +start
+        +ended
+    location:
+        +locationChange
+
+
+
+Bài tập:
+
+1. Tạo dropdown
+2. Tạo modal
+3. Tạo image viewer
+
+
+
+
+
+
